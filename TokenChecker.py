@@ -58,8 +58,8 @@ if __name__ == "__main__":
                 userName = user["username"]
                 userLocale = user["locale"]
                 c.alphaPrint("", f"[{timestamp}] [\033[92mVALID\033[0m] ID: {userId} | Email: {userEmail} | Username: {userName} | Locale: {userLocale}")
-                with open("./Data/DS/TokenChecker/valid.txt", "w") as f:
-                    f.write(f"Token: {token} | ID: {userId} | Email: {userEmail} | Username: {userName} | Locale: {userLocale}")
+                with open("./Data/DS/TokenChecker/valid.txt", "a") as f:
+                        f.write(f"Token: {token} | ID: {userId} | Email: {userEmail} | Username: {userName} | Locale: {userLocale}\n")  
             else:
                 c.alphaPrint("", f"[{timestamp}] [\033[91mINVALID\033[0m] {token}")
 open_file = input("Would you like to open the 'valid.txt' file? (Y/N): ")
