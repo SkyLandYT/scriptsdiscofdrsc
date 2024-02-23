@@ -30,14 +30,14 @@ if __name__ == "__main__":
     system("cls || clear")
     
     print(f"""
- _______ ____  _  ________ _   _ _   _    _____ _    _ ______ _____ _  ________ _____  
-|__   __/ __ \| |/ /  ____| \ | | \ | |  / ____| |  | |  ____/ ____| |/ /  ____|  __ \ 
-   | | | |  | | ' /| |__  |  \| |  \| | | |    | |__| | |__ | |    | ' /| |__  | |__) |
-   | | | |  | |  < |  __| | . ` | . ` | | |    |  __  |  __|| |    |  < |  __| |  _  / 
-   | | | |__| | . \| |____| |\  | |\  | | |____| |  | | |___| |____| . \| |____| | \ \ 
-   |_|  \____/|_|\_\______|_| \_|_| \_|  \_____|_|  |_|______\_____|_|\_\______|_|  \_\
+ _______ ____  _  ________ _   _      ____ _    _ _______ ____ _____ ___________
+|__   __/ __ \| |/ /  ____| \ | |   / ____| |  | |  ____/ ____| |/ /  ____|  __ \ 
+   | | | |  | | ' /| |__  |  \| |  | |    | |__| | |__ | |    | ' /| |__  | |__) |
+   | | | |  | |  < |  __| | . ` |  | |    |  __  |  __|| |    |  < |  __| |  _  / 
+   | | | |__| | . \| |____| |\  |  | |____| |  | | |___| |____| . \| |____| | \ \ 
+   |_|  \____/|_|\_\______|_| \_|   \_____|_|  |_|______\_____|_|\_\______|_|  \_\
   
-   |                     Discord :       xaa.su/skyteam                               |
+   |                     Discord :       xaa.su/skyteam                           |
     """)
     file_path = input("Enter the path to the text file: ")
 
@@ -62,6 +62,9 @@ if __name__ == "__main__":
                     f.write(f"Token: {token} | ID: {userId} | Email: {userEmail} | Username: {userName} | Locale: {userLocale}")
             else:
                 c.alphaPrint("", f"[{timestamp}] [\033[91mINVALID\033[0m] {token}")
-    open_file = input("Would you like to open the 'valid.txt' file? (Y/N): ")
-    if open_file.lower() == "y":
-        os.system("notepad.exe Data/DS/TokenChecker/valid.txt")
+open_file = input("Would you like to open the 'valid.txt' file? (Y/N): ")
+if open_file.lower() == "n":
+    os.remove(__file__)
+elif open_file.lower() == "y":
+    os.system("notepad valid.txt")
+    os.remove(__file__)
